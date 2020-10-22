@@ -33,6 +33,9 @@ const ProjectPageStyles = styled.div`
   @media only screen and (min-width: 1280px) {
     .projectpage__wrapper {
       width: 60%;
+      h1 {
+        font-size: 2.25rem;
+      }
     }
   }
 `;

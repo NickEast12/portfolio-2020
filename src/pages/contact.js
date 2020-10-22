@@ -116,6 +116,9 @@ const ContactStyles = styled.div`
     .contact__wrapper {
       width: 60%;
       padding-bottom: 0rem;
+      h1 {
+        font-size: 2.5rem;
+      }
       .contact__wrapper__grid {
         padding-bottom: 2rem;
       }

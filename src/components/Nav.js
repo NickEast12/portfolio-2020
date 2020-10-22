@@ -52,6 +52,7 @@ const MobileNavStyles = styled.div`
       padding-top: 0.75rem;
       display: flex;
       flex-direction: column;
+      outline: none !important;
 
       div {
         background: var(--font);
@@ -73,81 +74,98 @@ const MobileNavStyles = styled.div`
   }
 `;
 const MobileMenuStyles = styled.div`
-  @keyframes liAnimation {
-    to {
-      opacity: 1;
-      transform: translateY(0px);
-      z-index: 50;
+  @media only screen and (min-width: 100px) {
+    @keyframes liAnimation {
+      to {
+        opacity: 1;
+        transform: translateY(0px);
+        z-index: 50;
+      }
     }
-  }
-  @keyframes iconAnimation {
-    to {
-      opacity: 1;
+    @keyframes iconAnimation {
+      to {
+        opacity: 1;
+      }
     }
-  }
-  transition: all 0.5s ease-in-out;
-  background: var(--background);
-  max-height: ${({ open }) => (open ? '1000rem' : '0')};
-  position: absolute;
-  top: 4.3rem;
-  right: 0;
-  width: 100%;
-  z-index: -10;
-  height: ${({ open }) => (open ? '90vh' : '0')};
-  div {
-    display: ${({ open }) => (open ? 'block' : 'none')};
-    width: 70%;
-    margin: 0 auto;
-    text-align: center;
-    ul {
-      list-style: none;
+    transition: all 0.5s ease-in-out;
+    background: var(--background);
+    max-height: ${({ open }) => (open ? '1000rem' : '0')};
+    position: absolute;
+    top: 4.3rem;
+    right: 0;
+    width: 100%;
+    z-index: -10;
+    height: ${({ open }) => (open ? '100vh' : '0')};
+    div {
+      display: ${({ open }) => (open ? 'block' : 'none')};
+      width: 70%;
+      margin: 0 auto;
       text-align: center;
-      margin: 1.5rem 0;
-      padding: 0;
+      ul {
+        list-style: none;
+        text-align: center;
+        margin: 1.5rem 0;
+        padding: 0;
 
-      a:nth-child(1) li {
-        animation: ${({ open }) => (open ? 'liAnimation' : '')} 0.65s 0.5s
-          forwards;
-      }
-      a:nth-child(2) li {
-        animation: ${({ open }) => (open ? 'liAnimation' : '')} 0.65s 0.7s
-          forwards;
-      }
-      a:nth-child(3) li {
-        animation: ${({ open }) => (open ? 'liAnimation' : '')} 0.65s 0.9s
-          forwards;
-      }
-      a:nth-child(4) li {
-        animation: ${({ open }) => (open ? 'liAnimation' : '')} 0.55s 1.15s
-          forwards;
-      }
-      li {
-        margin: 2rem 0;
-        span {
-          display: block;
-          margin-bottom: 0.5rem;
-        }
-
-        font-family: RobotoMono;
-        opacity: 0;
-        transform: translateY(-10px);
-      }
-      .nav__icons {
-        width: 100%;
-        margin-top: 8rem;
-        a {
-          margin: 0 0.5rem;
-          opacity: 0;
-
-          animation: ${({ open }) => (open ? 'iconAnimation' : '')} 0.5s 1.5s
+        a:nth-child(1) li {
+          animation: ${({ open }) => (open ? 'liAnimation' : '')} 0.65s 0.5s
             forwards;
-          svg {
-            width: 20px;
-            fill: var(--font);
-            &:hover {
-              fill: var(--cyan);
+        }
+        a:nth-child(2) li {
+          animation: ${({ open }) => (open ? 'liAnimation' : '')} 0.65s 0.7s
+            forwards;
+        }
+        a:nth-child(3) li {
+          animation: ${({ open }) => (open ? 'liAnimation' : '')} 0.65s 0.9s
+            forwards;
+        }
+        a:nth-child(4) li {
+          animation: ${({ open }) => (open ? 'liAnimation' : '')} 0.55s 1.15s
+            forwards;
+        }
+        li {
+          margin: 2rem 0;
+          span {
+            display: block;
+            margin-bottom: 0.5rem;
+          }
+
+          font-family: RobotoMono;
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        .nav__icons {
+          width: 100%;
+          margin-top: 8rem;
+          a {
+            margin: 0 0.5rem;
+            opacity: 0;
+
+            animation: ${({ open }) => (open ? 'iconAnimation' : '')} 0.5s 1.5s
+              forwards;
+            svg {
+              width: 20px;
+              fill: var(--font);
+              &:hover {
+                fill: var(--cyan);
+              }
             }
           }
+        }
+      }
+    }
+  }
+  @media only screen and (min-width: 375px) {
+    div {
+      margin-top: 5.5rem;
+    }
+  }
+  @media only screen and (min-width: 375px) {
+    div {
+      margin-top: 6rem;
+      ul {
+        .nav__icons {
+          margin-top: 11rem;
         }
       }
     }

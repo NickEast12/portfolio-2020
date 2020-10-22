@@ -333,7 +333,7 @@ const HomepageBlogs = () => (
 const HomepageContactStyles = styled.section`
   width: 100%;
   text-align: center;
-  margin: 1.5rem 0 2rem 0;
+  margin: 5rem 0 6rem 0;
 
   h2 {
     font-size: 1.4rem;
@@ -353,7 +353,7 @@ const HomepageLower = () => (
   <HomepageContactStyles>
     <div>
       <h2>
-        <span className="page__num">05.</span>
+        <span className="page__num">04.</span>
         Contact me
       </h2>
       <p>

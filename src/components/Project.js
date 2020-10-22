@@ -90,7 +90,7 @@ const ProjectStyles = styled.div`
         li {
           font-family: RobotoMono;
           border-radius: 2.5px;
-          color: var(--white);
+          color: #0d1418;
           padding: 0.25rem;
           text-transform: uppercase;
           font-size: 0.8rem;
@@ -101,10 +101,13 @@ const ProjectStyles = styled.div`
       }
       &__icons {
         a {
-          padding: 0 5px;
+          padding: 0 15px;
           svg {
             width: 20px;
             fill: var(--font);
+            &:hover {
+              fill: var(--cyan);
+            }
           }
         }
       }
