@@ -47,6 +47,11 @@ const GlobalStyles = createGlobalStyle`
         padding: 1rem; 
         font-size: clamp(.9rem, 2.5vw, 1rem);
         cursor: pointer;
+        transition: all .5s ease;
+        &:hover {
+            color: var(--background);
+            background: var(--cyan);
+        }
     }
    
 

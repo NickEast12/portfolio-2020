@@ -88,7 +88,8 @@ const MobileMenuStyles = styled.div`
       }
     }
     transition: all 0.5s ease-in-out;
-    background: var(--background);
+    background: rgba(22, 34, 41, 0.95);
+    backdrop-filter: saturate(180%) blur(5px);
     max-height: ${({ open }) => (open ? '1000rem' : '0')};
     position: absolute;
     top: 4.3rem;
@@ -238,6 +239,10 @@ const MobileNav = () => {
 const DesktopNavStyles = styled.div`
   display: none;
   width: 100%;
+  position: sticky !important;
+  top: 0;
+  background: rgba(22, 34, 41, 0.85);
+  backdrop-filter: saturate(180%) blur(5px);
   @media only screen and (min-width: 768px) {
     display: block;
     border-bottom: solid 1px var(--font);
@@ -294,11 +299,23 @@ const DesktopNavStyles = styled.div`
   }
   @media only screen and (min-width: 1280px) {
     .desktop__nav__wrapper {
-      width: 60%;
+      width: 80%;
+      padding-top: 1.2rem;
+
       &__logo {
       }
       &__li {
-        width: 50%;
+        width: 40%;
+        ul {
+          a {
+            li {
+              font-size: 0.85rem;
+              &:hover {
+                color: var(--cyan);
+              }
+            }
+          }
+        }
       }
     }
   }

@@ -75,6 +75,23 @@ const HomepageHeaderStyles = styled.section`
       margin-top: 7rem;
     }
   }
+  @media only screen and (min-width: 768px) {
+    width: 70%;
+    margin-top: 10rem;
+  }
+  @media only screen and (min-width: 768px) {
+    width: 60%;
+    margin: 2rem auto 0 10%;
+    .home__title {
+      h1 {
+        font-size: 3rem;
+      }
+    }
+    .home__buttons {
+      width: 50%;
+      margin: 2rem auto 0 0;
+    }
+  }
 `;
 const HomepageHeader = () => (
   <HomepageHeaderStyles>
@@ -225,6 +242,36 @@ const HomepageMiddleStyles = styled.section`
       }
     }
   }
+  @media only screen and (min-width: 768px) {
+    width: 80%;
+    margin: 0 auto;
+    .middle__intro {
+      h2 {
+        font-size: 1.55rem;
+        &:after {
+          width: 60%;
+        }
+      }
+    }
+    .middle__skills {
+      h2 {
+        font-size: 1.55rem;
+        &:after {
+          width: 62%;
+        }
+      }
+    }
+    .middle__projects {
+      padding-top: 2rem;
+      & > h2 {
+        font-size: 1.55rem;
+        margin-bottom: 2rem;
+        &:after {
+          width: 40%;
+        }
+      }
+    }
+  }
 `;
 const HomepageMiddle = ({ projects }) => (
   <HomepageMiddleStyles>
@@ -331,22 +378,28 @@ const HomepageBlogs = () => (
 );
 
 const HomepageContactStyles = styled.section`
-  width: 100%;
-  text-align: center;
-  margin: 5rem 0 6rem 0;
+  @media only screen and (min-width: 100px) {
+    width: 100%;
+    text-align: center;
+    margin: 5rem 0 6rem 0;
 
-  h2 {
-    font-size: 1.4rem;
-  }
-  p {
-    width: 85%;
-    margin: 1.5rem auto;
-    color: var(--font);
-  }
-  a {
-    button {
-      margin-top: 0.5rem;
+    h2 {
+      font-size: 1.4rem;
     }
+    p {
+      width: 85%;
+      margin: 1.5rem auto;
+      color: var(--font);
+    }
+    a {
+      button {
+        margin-top: 0.5rem;
+      }
+    }
+  }
+  @media only screen and (min-width: 768px) {
+    width: 70%;
+    margin: 4rem auto 6rem auto;
   }
 `;
 const HomepageLower = () => (
