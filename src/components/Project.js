@@ -96,7 +96,7 @@ const ProjectStyles = styled.div`
           font-size: 0.8rem;
           background: var(--cyan);
 
-          font-weight: 200;
+          font-weight: 500;
         }
       }
       &__icons {
@@ -109,6 +109,22 @@ const ProjectStyles = styled.div`
               fill: var(--cyan);
             }
           }
+        }
+      }
+    }
+  }
+  @media only screen and (min-width: 500px) {
+    .projects__text__align {
+      &:nth-child(odd) {
+        .project__img {
+          width: 85%;
+          margin: 0 auto 0 0;
+        }
+      }
+      &:nth-of-type(2n) {
+        .project__img {
+          width: 85%;
+          margin: 0 0 0 auto;
         }
       }
     }
@@ -199,6 +215,15 @@ const ProjectStyles = styled.div`
         }
         .project__content {
           &__wrapper {
+            h4 {
+              font-size: 1.2rem;
+            }
+            h2 {
+              font-size: 1.6rem;
+            }
+            p {
+              font-size: 1.1rem;
+            }
             width: 60%;
             ul {
               width: 70%;
@@ -221,6 +246,15 @@ const ProjectStyles = styled.div`
           }
         }
         .project__content {
+          h4 {
+            font-size: 1.2rem;
+          }
+          h2 {
+            font-size: 1.6rem;
+          }
+          p {
+            font-size: 1.1rem;
+          }
           &__wrapper {
             width: 60%;
             ul {
@@ -231,6 +265,9 @@ const ProjectStyles = styled.div`
           }
         }
       }
+    }
+    .projects__text__align:hover .project__img::after {
+      opacity: 0;
     }
   }
 `;
@@ -246,7 +283,7 @@ const Project = ({ projects }) => {
           </div>
           <div className="project__content">
             <div className="project__content__wrapper">
-              <h4>Web design &amp; development</h4>
+              <h4>{project.type}</h4>
               <h2>{project.name}</h2>
               <p>{project.description}</p>
               <ul>

@@ -72,7 +72,6 @@ export const query = graphql`
         skills
         github
         live
-        number
         image {
           asset {
             fluid {

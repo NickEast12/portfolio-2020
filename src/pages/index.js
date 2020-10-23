@@ -6,6 +6,8 @@ import SEO from '../components/SEO';
 
 const index = ({ data }) => {
   const projects = data.projects.nodes;
+  const test = 'hello';
+  console.log(projects);
   return (
     <div>
       <SEO title="Home" />
@@ -91,6 +93,9 @@ const HomepageHeaderStyles = styled.section`
       width: 50%;
       margin: 2rem auto 0 0;
     }
+  }
+  @media only screen and (min-width: 1280px) {
+    padding-top: 2rem;
   }
 `;
 const HomepageHeader = () => (
@@ -189,10 +194,14 @@ const HomepageMiddleStyles = styled.section`
             border: solid 2px var(--cyan);
 
             p {
-              font-family: RobotoMono;
+              font-family: var(--altFont);
             }
-            &:nth-child(even) {
+            &:nth-child(2n + 1) {
               background: var(--cyan);
+
+              p {
+                color: #0d1418 !important;
+              }
             }
           }
         }
@@ -245,6 +254,7 @@ const HomepageMiddleStyles = styled.section`
   @media only screen and (min-width: 768px) {
     width: 80%;
     margin: 0 auto;
+
     .middle__intro {
       h2 {
         font-size: 1.55rem;
@@ -269,6 +279,55 @@ const HomepageMiddleStyles = styled.section`
         &:after {
           width: 40%;
         }
+      }
+    }
+  }
+  @media only screen and (min-width: 1280px) {
+    width: 80%;
+    margin: 0 auto;
+
+    .middle__intro {
+      h2 {
+        font-size: 1.65rem;
+        &:after {
+          width: 30%;
+          left: 12rem;
+        }
+      }
+      p {
+        width: 100%;
+        font-size: 1.2rem;
+      }
+    }
+
+    .middle__skills {
+      margin-top: 5rem;
+      h2 {
+        font-size: 1.65rem;
+        &:after {
+          width: 30%;
+          left: 12rem;
+        }
+      }
+      .skills-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1rem;
+      }
+    }
+
+    .middle__projects {
+      padding-top: 2rem;
+      & > h2 {
+        font-size: 1.65rem;
+        &:after {
+          width: 30%;
+          left: 19rem;
+        }
+      }
+      &__wrapper {
+        width: 85%;
+        margin: 0 auto;
       }
     }
   }
@@ -301,51 +360,56 @@ const HomepageMiddle = ({ projects }) => (
         <span className="page__num">02.</span>
         My skills
       </h2>
-      <div className="middle__skills__wrapper">
-        <h3>Programming Languages</h3>
-        <div className="middle__skills__wrapper__flex">
-          <div>
-            <p>HTML</p>
-          </div>
-          <div>
-            <p>CSS/SASS</p>
-          </div>
-          <div>
-            <p>JavaScript ES6</p>
-          </div>
-          <div>
-            <p>GraphQL</p>
-          </div>
-        </div>
-      </div>
-      <div className="middle__skills__wrapper">
-        <h3>Frameworks</h3>
-        <div className="middle__skills__wrapper__flex">
-          <div>
-            <p>jQuery</p>
-          </div>
-          <div>
-            <p>React</p>
-          </div>
-          <div>
-            <p>Gatsby</p>
-          </div>
-          <div>
-            <p>Node.js</p>
+      <div className="skills-grid">
+        <div className="middle__skills__wrapper">
+          <h3>Programming Languages</h3>
+          <div className="middle__skills__wrapper__flex">
+            <div>
+              <p>HTML</p>
+            </div>
+            <div>
+              <p>CSS/SASS</p>
+            </div>
+            <div>
+              <p>JavaScript ES6</p>
+            </div>
+            <div>
+              <p>GraphQL</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="middle__skills__wrapper">
-        <h3>Tools </h3>
-        <div className="middle__skills__wrapper__flex">
-          <div>
-            <p>Git</p>
+        <div className="middle__skills__wrapper">
+          <h3>Frameworks</h3>
+          <div className="middle__skills__wrapper__flex">
+            <div>
+              <p>jQuery</p>
+            </div>
+            <div>
+              <p>React</p>
+            </div>
+            <div>
+              <p>Gatsby</p>
+            </div>
+            <div>
+              <p>Node.js</p>
+            </div>
           </div>
-          <div>
-            <p>Gulp</p>
-          </div>
-          <div>
-            <p>Webpack</p>
+        </div>
+        <div className="middle__skills__wrapper">
+          <h3>Tools &amp; Platforms </h3>
+          <div className="middle__skills__wrapper__flex">
+            <div>
+              <p>Git</p>
+            </div>
+            <div>
+              <p>Gulp</p>
+            </div>
+            <div>
+              <p>Webpack</p>
+            </div>
+            <div>
+              <p>Netlify</p>
+            </div>
           </div>
         </div>
       </div>
@@ -401,6 +465,14 @@ const HomepageContactStyles = styled.section`
     width: 70%;
     margin: 4rem auto 6rem auto;
   }
+  @media only screen and (min-width: 1280px) {
+    h2 {
+      font-size: 1.65rem;
+    }
+    p {
+      font-size: 1.2rem;
+    }
+  }
 `;
 const HomepageLower = () => (
   <HomepageContactStyles>
@@ -424,7 +496,7 @@ export default index;
 
 export const query = graphql`
   query ProjectQuery {
-    projects: allSanityProjects {
+    projects: allSanityProjects(limit: 2) {
       nodes {
         name
         slug {
@@ -434,7 +506,7 @@ export const query = graphql`
         skills
         github
         live
-        number
+        type
         image {
           asset {
             fluid(maxWidth: 700) {

@@ -24,6 +24,7 @@ const Typography = createGlobalStyle`
     p {
         line-height: 1.4;
         letter-spacing: -.1px;
+        font-size: clamp(1.1rem, 10vw 1.5rem);
     }
     a {
         color: inherit; 
@@ -31,8 +32,8 @@ const Typography = createGlobalStyle`
     }
     .page__num {
         color: var(--cyan);
-        font-family: RobotoMono;
-        font-size: 1.1rem;
+        font-family: var(--altFont);
+        /* font-size: clamp(1rem, 50% 1.5rem); */
         margin-right: 5px;
         font-weight: 300;
 

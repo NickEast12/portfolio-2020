@@ -241,6 +241,7 @@ const DesktopNavStyles = styled.div`
   width: 100%;
   position: sticky !important;
   top: 0;
+  z-index: 25;
   background: rgba(22, 34, 41, 0.85);
   backdrop-filter: saturate(180%) blur(5px);
   @media only screen and (min-width: 768px) {
