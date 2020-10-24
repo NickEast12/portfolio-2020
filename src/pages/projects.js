@@ -62,15 +62,17 @@ export default projectspage;
 
 export const query = graphql`
   query projectQuery {
-    projects: allSanityProjects {
+    projects: allSanityProjects(sort: { fields: _createdAt, order: DESC }) {
       nodes {
         name
+        _createdAt
         slug {
           current
         }
         description
         skills
         github
+        type
         live
         image {
           asset {

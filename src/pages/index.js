@@ -496,9 +496,13 @@ export default index;
 
 export const query = graphql`
   query ProjectQuery {
-    projects: allSanityProjects(limit: 2) {
+    projects: allSanityProjects(
+      sort: { fields: _createdAt, order: DESC }
+      limit: 2
+    ) {
       nodes {
         name
+        _createdAt
         slug {
           current
         }
