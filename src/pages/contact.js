@@ -137,26 +137,32 @@ const contact = () => (
         formal then use the button to email me instead. No robots, please!
       </p>
       <div className="contact__wrapper__grid">
-        <form action="">
+        <form name="contact" method="POST" data-netlify="true">
           <fieldset>
             <div className="form__inputs">
               <label htmlFor="name">
                 What's your name{' '}
-                <input placeholder="ezekiel?" type="text" required id="name" />
+                <input
+                  placeholder="ezekiel?"
+                  type="text"
+                  required
+                  id="name"
+                  name="name"
+                />
               </label>
             </div>
             <div className="form__inputs">
               <label htmlFor="email">
-                Whats ur email <input type="email" required />
+                Whats ur email <input type="email" required name="email" />
               </label>
             </div>
             <div className="form__textarea">
               <label htmlFor="message">
-                Message <textarea required />
+                Message <textarea required name="message" />
               </label>
             </div>
             <div className="form__btn">
-              <button type="button">Submit</button>
+              <button type="submit">Submit</button>
             </div>
           </fieldset>
         </form>
