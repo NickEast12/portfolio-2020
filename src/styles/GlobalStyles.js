@@ -56,7 +56,92 @@ const GlobalStyles = createGlobalStyle`
             background: var(--cyan);
         }
     }
-   
+    @media only screen and (min-width: 320px) {
+        .cookie {
+        width: 100%;
+        position: fixed;
+        bottom: 1rem;
+        &__wrapper {
+            background: var(--cyan);
+            width: 85%;
+            padding: 1rem 1rem;
+            border-radius: 4.5px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            p {
+                color: var(--black);
+                font-size: .95rem;
+                margin-left: 2.5px;
+            }
+            button {
+                padding:.65rem;
+                border: solid 2px var(--cyan);
+
+                &:hover {
+                    color:var(--background);
+                    background: none;
+                    border: solid 2px var(--background);
+                }
+            }
+        }
+    }
+    }
+    @media only screen and (min-width: 375px) {
+        .cookie {
+      
+        &__wrapper {
+            
+            p {
+                
+                font-size: 1.1rem;
+                
+            }
+            button {
+                padding:.75rem;
+
+            }
+        }
+    }
+    }
+    @media only screen and (min-width: 414px) {
+        .cookie {
+      
+        &__wrapper {
+            padding: 1rem 1.5rem;
+            p {
+                
+                font-size: 1.1rem;
+                
+            }
+            button {
+                padding:.75rem;
+
+            }
+        }
+    }
+    }
+    @media only screen and (min-width: 768px) {
+        .cookie {
+            width: 100%;
+        &__wrapper {
+            max-width: 360px;
+            
+            padding: 1rem 1.5rem;
+            p {
+                
+                font-size: 1.1rem;
+                
+            }
+            button {
+                padding:.75rem;
+
+            }
+        }
+    }
+    }
+    
 
 `;
 

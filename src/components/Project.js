@@ -298,47 +298,40 @@ const ProjectStyles = styled.div`
   }
 `;
 
-const Project = ({ projects }) => {
-  console.log(projects);
-  return (
-    <ProjectStyles>
-      {projects.map((project) => (
-        <div className="projects__text__align" key={project.slug.current}>
-          <div className="project__img">
-            <Img fluid={project.image.asset.fluid} />
-          </div>
-          <div className="project__content">
-            <div className="project__content__wrapper">
-              <h4>{project.type}</h4>
-              <h2>{project.name}</h2>
-              <p>{project.description}</p>
-              <ul>
-                {project.skills.map((skill) => (
-                  <li key={skill}>{skill}</li>
-                ))}
-              </ul>
-              <div className="project__content__icons">
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Github />
-                </a>
-                <a
-                  href={project.live}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Live />
-                </a>
-              </div>
+const Project = ({ projects }) => (
+  <ProjectStyles>
+    {projects.map((project) => (
+      <div className="projects__text__align" key={project.slug.current}>
+        <div className="project__img">
+          <Img fluid={project.image.asset.fluid} />
+        </div>
+        <div className="project__content">
+          <div className="project__content__wrapper">
+            <h4>{project.type}</h4>
+            <h2>{project.name}</h2>
+            <p>{project.description}</p>
+            <ul>
+              {project.skills.map((skill) => (
+                <li key={skill}>{skill}</li>
+              ))}
+            </ul>
+            <div className="project__content__icons">
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Github />
+              </a>
+              <a href={project.live} target="_blank" rel="noopener noreferrer">
+                <Live />
+              </a>
             </div>
           </div>
         </div>
-      ))}
-    </ProjectStyles>
-  );
-};
+      </div>
+    ))}
+  </ProjectStyles>
+);
 
 export default Project;
