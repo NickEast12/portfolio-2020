@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import SEO from '../components/SEO';
 
 const ContactStyles = styled.div`
   @media only screen and (min-width: 100px) {
@@ -126,59 +127,53 @@ const ContactStyles = styled.div`
   }
 `;
 
-const contact = () => {
-  console.log('contact');
-  return (
-    <ContactStyles>
-      <div className="contact__wrapper">
-        <h1>Contact me</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
-          iure cumque ea quibusdam.
-        </p>
-        <div className="contact__wrapper__grid">
-          <form action="">
-            <fieldset>
-              <div className="form__inputs">
-                <label htmlFor="name">
-                  What's your name{' '}
-                  <input
-                    placeholder="ezekiel?"
-                    type="text"
-                    required
-                    id="name"
-                  />
-                </label>
-              </div>
-              <div className="form__inputs">
-                <label htmlFor="email">
-                  Whats ur email <input type="email" required />
-                </label>
-              </div>
-              <div className="form__textarea">
-                <label htmlFor="message">
-                  Message <textarea required />
-                </label>
-              </div>
-              <div className="form__btn">
-                <button type="button">Submit</button>
-              </div>
-            </fieldset>
-          </form>
-          <div className="contact__wrapper__grid__email">
-            <h2>Send me an email</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Laboriosam dignissimos eos, ipsum cupiditate aliquid quis.
-            </p>
-            <a href="mailto:contact@nick-east.com">
-              <button type="button">Send me an email</button>
-            </a>
-          </div>
+const contact = () => (
+  <ContactStyles>
+    <SEO title="Contact | Nick East Front-end Developer" />
+    <div className="contact__wrapper">
+      <h1>Contact me</h1>
+      <p>
+        Get in contact with me using the form below, or if you are feeling
+        formal then use the button to email me instead. No robots, please!
+      </p>
+      <div className="contact__wrapper__grid">
+        <form action="">
+          <fieldset>
+            <div className="form__inputs">
+              <label htmlFor="name">
+                What's your name{' '}
+                <input placeholder="ezekiel?" type="text" required id="name" />
+              </label>
+            </div>
+            <div className="form__inputs">
+              <label htmlFor="email">
+                Whats ur email <input type="email" required />
+              </label>
+            </div>
+            <div className="form__textarea">
+              <label htmlFor="message">
+                Message <textarea required />
+              </label>
+            </div>
+            <div className="form__btn">
+              <button type="button">Submit</button>
+            </div>
+          </fieldset>
+        </form>
+        <div className="contact__wrapper__grid__email">
+          <h2>Send me an email</h2>
+          <p>
+            If you have a project that you think I'd be able to help with then
+            get in touch. If you just want to say Hi then my inbox is always
+            open.
+          </p>
+          <a href="mailto:contact@nick-east.com">
+            <button type="button">Send me an email</button>
+          </a>
         </div>
       </div>
-    </ContactStyles>
-  );
-};
+    </div>
+  </ContactStyles>
+);
 
 export default contact;

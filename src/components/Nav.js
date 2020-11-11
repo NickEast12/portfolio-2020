@@ -5,6 +5,7 @@ import Logo from '../assets/images/logo-white.png';
 import Github from '../svgs/github.svg';
 import LinkedIn from '../svgs/linkedin.svg';
 import Spotify from '../svgs/spotify.svg';
+import LogoIcon from '../svgs/logo.svg';
 
 const Nav = () => {
   console.log('this is the navigation');
@@ -39,7 +40,7 @@ const MobileNavStyles = styled.div`
 
     &__img {
       svg {
-        width: 10px;
+        width: 40px;
       }
       img {
         width: 35px;
@@ -180,7 +181,7 @@ const MobileNav = () => {
       <div className="mobile__nav__inner">
         <div className="mobile__nav__inner__img">
           <Link to="/">
-            <img src={Logo} alt="East Logo" />
+            <LogoIcon />
           </Link>
         </div>
 
@@ -213,7 +214,10 @@ const MobileNav = () => {
                 <span className="page__num">03</span> Contact
               </li>
             </Link>
-            <a href="/" onClick={() => setOpen(!open)}>
+            <a
+              href="mailto:contact@nick-east.com?subject=Request Resume"
+              onClick={() => setOpen(!open)}
+            >
               <li>
                 <button type="button">Request Resume</button>
               </li>
@@ -243,6 +247,9 @@ const DesktopNavStyles = styled.div`
   top: 0;
   z-index: 25;
   background: rgba(22, 34, 41, 0.85);
+  .desktop__nav__wrapper {
+    max-width: var(--maxWidth);
+  }
   backdrop-filter: saturate(180%) blur(5px);
   @media only screen and (min-width: 768px) {
     display: block;
@@ -256,8 +263,8 @@ const DesktopNavStyles = styled.div`
       padding: 1rem 0;
       &__logo {
         width: auto;
-        img {
-          width: 2.5rem;
+        svg {
+          width: 60px;
         }
       }
       &__li {
@@ -304,6 +311,9 @@ const DesktopNavStyles = styled.div`
       padding-top: 1.2rem;
 
       &__logo {
+        svg {
+          width: 60px;
+        }
       }
       &__li {
         width: 40%;
@@ -321,46 +331,43 @@ const DesktopNavStyles = styled.div`
     }
   }
 `;
-const DesktopNav = () => {
-  console.log('desktop nav ');
-  return (
-    <DesktopNavStyles>
-      <div className="desktop__nav__wrapper">
-        <div className="desktop__nav__wrapper__logo">
-          <Link to="/">
-            <img src={Logo} alt="logo" />
-          </Link>
-        </div>
-        <div className="desktop__nav__wrapper__li">
-          <ul>
-            <Link to="/">
-              <li>
-                <span>01.</span>
-                Home
-              </li>
-            </Link>
-            <Link to="/projects">
-              <li>
-                <span>02.</span>
-                Projects
-              </li>
-            </Link>
-            <Link to="/contact">
-              <li>
-                <span>03.</span>
-                Contact
-              </li>
-            </Link>
-            <a to="/">
-              <li>
-                <button type="button">Request Resume</button>
-              </li>
-            </a>
-          </ul>
-        </div>
+const DesktopNav = () => (
+  <DesktopNavStyles>
+    <div className="desktop__nav__wrapper">
+      <div className="desktop__nav__wrapper__logo">
+        <Link to="/">
+          <LogoIcon />
+        </Link>
       </div>
-    </DesktopNavStyles>
-  );
-};
+      <div className="desktop__nav__wrapper__li">
+        <ul>
+          <Link to="/">
+            <li>
+              <span>01.</span>
+              Home
+            </li>
+          </Link>
+          <Link to="/projects">
+            <li>
+              <span>02.</span>
+              Projects
+            </li>
+          </Link>
+          <Link to="/contact">
+            <li>
+              <span>03.</span>
+              Contact
+            </li>
+          </Link>
+          <a href="mailto:contact@nick-east.com?subject=Request Resume">
+            <li>
+              <button type="button">Request Resume</button>
+            </li>
+          </a>
+        </ul>
+      </div>
+    </div>
+  </DesktopNavStyles>
+);
 
 export default Nav;

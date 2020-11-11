@@ -2,6 +2,7 @@ import { graphql } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
 import Project from '../components/Project';
+import SEO from '../components/SEO';
 
 const ProjectPageStyles = styled.div`
   @media only screen and (min-width: 100px) {
@@ -38,14 +39,17 @@ const ProjectPageStyles = styled.div`
       }
     }
   }
+  @media only screen and (min-width: 1440px) {
+    width: 90%;
+    margin: 0 auto;
+  }
 `;
 
 const projectspage = ({ data }) => {
   const projects = data.projects.nodes;
-  console.log(projects);
-
   return (
     <ProjectPageStyles>
+      <SEO title="Projects | Nick East Front-end Developer" />
       <div className="projectpage__wrapper">
         <h1>My Projects</h1>
         <p>

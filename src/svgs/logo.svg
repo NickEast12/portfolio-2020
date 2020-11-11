@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg  viewBox="0 0 112 73" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Page 1</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-family="Inter-Regular_ExtraBold, Inter" font-size="100" font-weight="600">
+        <g id="A5" transform="translate(-126.000000, -81.000000)" fill="#1BBC9B" fill-rule="nonzero">
+            <text id="N">
+                <tspan x="121" y="154">N</tspan>
+            </text>
+            <text id="N">
+                <tspan x="170" y="154">N</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

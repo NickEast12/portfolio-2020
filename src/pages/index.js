@@ -4,18 +4,29 @@ import styled from 'styled-components';
 import Project from '../components/Project';
 import SEO from '../components/SEO';
 
+const PageWrapperStyles = styled.div`
+  @media only screen and (min-width: 1440px) {
+    width: 100%;
+
+    div {
+      max-width: 1630px;
+
+      margin: 0 auto;
+    }
+  }
+`;
 const index = ({ data }) => {
   const projects = data.projects.nodes;
-  const test = 'hello';
-  console.log(projects);
   return (
-    <div>
-      <SEO title="Home" />
-      <HomepageHeader />
-      <HomepageMiddle projects={projects} />
-      {/* <HomepageBlogs /> */}
-      <HomepageLower />
-    </div>
+    <PageWrapperStyles>
+      <div>
+        <SEO title="Nick East Front-end Developer" />
+        <HomepageHeader />
+        <HomepageMiddle projects={projects} />
+        {/* <HomepageBlogs /> */}
+        <HomepageLower />
+      </div>
+    </PageWrapperStyles>
   );
 };
 
@@ -24,7 +35,6 @@ const HomepageHeaderStyles = styled.section`
     width: 85%;
     margin: 0 auto;
     height: 85vh;
-    /* border: solid red 2px; */
     border-bottom: none;
     .home__title {
       margin: 0 auto;
@@ -97,6 +107,9 @@ const HomepageHeaderStyles = styled.section`
   @media only screen and (min-width: 1280px) {
     padding-top: 2rem;
   }
+  @media only screen and (min-width: 1600px) {
+    margin-top: 4rem;
+  }
 `;
 const HomepageHeader = () => (
   <HomepageHeaderStyles>
@@ -106,13 +119,12 @@ const HomepageHeader = () => (
         I build <span>Websites </span> <br /> and other cool things for the web!
       </h1>
       <p>
-        I'm a software engineer based in Boston, MA specializing in building
-        (and occasionally designing) exceptional websites, applications, and
-        everything in between.
+        I'm a front-end web developer based in London, UK. With a love for
+        designing and writing code.
       </p>
     </div>
     <div className="home__buttons">
-      <Link to="/">
+      <Link to="/contact">
         <button type="submit">Get in touch</button>
       </Link>
     </div>
@@ -331,6 +343,10 @@ const HomepageMiddleStyles = styled.section`
       }
     }
   }
+  @media only screen and (min-width: 1440px) {
+    width: 80%;
+    max-width: 1500px;
+  }
 `;
 const HomepageMiddle = ({ projects }) => (
   <HomepageMiddleStyles>
@@ -339,20 +355,16 @@ const HomepageMiddle = ({ projects }) => (
         <span className="page__num">01.</span>
         About me
       </h2>
+      <p>Hello, I'm Nick a front-end web developer based in London, UK.</p>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus id
-        quis provident eos.
+        Currently working as a freelance web developer building clean, modern
+        websites using the latest front-end technologies. Building personal
+        projects in my spare time to help develop my skills and increase my
+        proficiency.
       </p>
       <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi,
-        cupiditate dicta illo mollitia, itaque temporibus beatae natus minima
-        nobis, tempora doloremque? Error, obcaecati dolor at delectus soluta
-        facere id minima!
-      </p>
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi,
-        cupiditate dicta illo mollitia, itaque temporibus beatae natus minima
-        nobis.
+        I'm interested in joining a team and learning from like-minded
+        developers to help me reach the next stage in my career.
       </p>
     </section>
     <section className="middle__skills">
@@ -466,6 +478,7 @@ const HomepageContactStyles = styled.section`
     margin: 4rem auto 6rem auto;
   }
   @media only screen and (min-width: 1280px) {
+    max-width: 1000px;
     h2 {
       font-size: 1.65rem;
     }
@@ -482,8 +495,8 @@ const HomepageLower = () => (
         Contact me
       </h2>
       <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta
-        voluptatem.
+        Always looking for new opportunities to build upon my portfolio. If you
+        have a project in mind, then I'd love to hear from you!
       </p>
       <Link to="/contact">
         <button type="button">Send me a message</button>

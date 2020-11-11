@@ -2,15 +2,29 @@ require('dotenv').config({ path: '.env' });
 
 module.exports = {
   siteMetadata: {
-    title: `Nick is cool`,
+    title: `Nick East Front-end Developer`,
     siteUrl: `https://wwww.nick-east.com`,
-    description: `will fill this in later`,
+    description: `I'm a front-end web developer based in London, UK. With a love for designing and writing code.`,
     twitter: `@comebacktothis`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-preload-fonts`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Nick East `,
+        short_name: `Nick East`,
+        description: `I'm a front-end web developer based in London, UK. With a love for designing and writing code.`,
+        start_url: `/`,
+        lang: `en`,
+        background_color: `#162129`,
+        theme_color: `#1bbc9b`,
+        display: `standalone`,
+        icon: `./src/assets/images/icon.png`,
+      },
+    },
     {
       resolve: `gatsby-source-sanity`,
       options: {

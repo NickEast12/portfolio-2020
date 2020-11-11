@@ -13,6 +13,7 @@ const GlobalStyles = createGlobalStyle`
         --header-border-bottom: inset 0 -1px 0 0 rgba(0,0,0,0.1);
         --titleFont: Inter;
         --altFont: RobotoMono;
+        --maxWidth: 1300px;
     }
     *, *:after, *:before {
         box-sizing: border-box;

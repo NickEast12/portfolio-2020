@@ -270,6 +270,32 @@ const ProjectStyles = styled.div`
       opacity: 0;
     }
   }
+  @media only screen and (min-width: 1440px) {
+    margin: 0;
+    width: 100%;
+    .projects__text__align {
+      width: 100%;
+      &:nth-child(odd) {
+        .project__content {
+          width: 100%;
+          &__wrapper {
+            width: 65%;
+            margin: 0;
+          }
+        }
+      }
+      &:nth-child(2n) {
+        .project__content {
+          width: 100%;
+
+          &__wrapper {
+            margin: 0 0 0 auto;
+            width: 65%;
+          }
+        }
+      }
+    }
+  }
 `;
 
 const Project = ({ projects }) => {
