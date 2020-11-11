@@ -137,7 +137,13 @@ const contact = () => (
         formal then use the button to email me instead. No robots, please!
       </p>
       <div className="contact__wrapper__grid">
-        <form name="contact" method="POST" data-netlify="true">
+        <form
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          action="/thank-you"
+        >
           <fieldset>
             <div className="form__inputs">
               <label htmlFor="name">
