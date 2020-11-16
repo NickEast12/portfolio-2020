@@ -6,7 +6,7 @@ module.exports = {
     siteUrl: `https://wwww.nick-east.com`,
     description: `I'm a front-end web developer based in London, UK. With a love for designing and writing code.`,
     twitter: `@comebacktothis`,
-    image: `./src/assets/images/icon.png`,
+    image: `/icon.png`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -56,7 +56,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: process.env.GOOGLE_ID,
+        trackingId: 'UA-138434630-1',
         head: true,
       },
     },
@@ -64,7 +64,7 @@ module.exports = {
       resolve: `gatsby-plugin-gdpr-cookies`,
       options: {
         googleAnalytics: {
-          trackingId: process.env.GOOGLE_ID,
+          trackingId: 'UA-138434630-1',
           anonymize: true,
         },
         environments: ['production', 'development'],
