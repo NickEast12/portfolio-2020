@@ -1,4 +1,4 @@
-require("dotenv").config({ path: ".env" });
+require('dotenv').config({ path: '.env' });
 
 module.exports = {
   siteMetadata: {
@@ -12,6 +12,7 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-preload-fonts`,
     `gatsby-plugin-sitemap`,
+    `gatsby-plugin-canonical-urls`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -57,16 +58,6 @@ module.exports = {
       options: {
         trackingId: process.env.GOOGLE_ID,
         head: true,
-        // Setting this parameter is optional
-        anonymize: true,
-        // Setting this parameter is also optional
-        respectDNT: true,
-        // Avoids sending pageview hits from custom paths
-        exclude: ["/preview/**", "/do-not-track/me/too/"],
-        // Delays sending pageview hits on route update (in milliseconds)
-        pageTransitionDelay: 0,
-        defer: false,
-        // Any additional optional fields
       },
     },
     {
@@ -76,15 +67,15 @@ module.exports = {
           trackingId: process.env.GOOGLE_ID,
           anonymize: true,
         },
-        environments: ["production", "development"],
+        environments: ['production', 'development'],
       },
     },
     {
-      resolve: "gatsby-plugin-robots-txt",
+      resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: "https://www.example.com",
-        sitemap: "https://www.example.com/sitemap.xml",
-        policy: [{ userAgent: "*", allow: "/" }],
+        host: 'https://www.nick-east.com',
+        sitemap: 'https://www.nick-east.com/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }],
       },
     },
   ],
