@@ -6,13 +6,13 @@ module.exports = {
     siteUrl: `https://wwww.nick-east.com`,
     description: `I'm a front-end web developer based in London, UK. With a love for designing and writing code.`,
     twitter: `@comebacktothis`,
+    image: `./src/assets/images/icon.png`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-preload-fonts`,
     `gatsby-plugin-sitemap`,
-    `gatsby-plugin-canonical-urls`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -23,7 +23,7 @@ module.exports = {
         lang: `en`,
         background_color: `#162129`,
         theme_color: `#1bbc9b`,
-        display: `standalone`,
+        display: `minimal-ui`,
         icon: `./src/assets/images/icon.png`,
       },
     },
