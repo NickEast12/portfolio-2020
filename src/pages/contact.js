@@ -15,55 +15,51 @@ const ContactStyles = styled.div`
       .contact__wrapper__grid {
         form {
           margin: 1rem 0;
-          fieldset {
-            border: none;
-            margin: 0;
-            padding: 0;
-            .form__inputs {
-              background: #0d1418;
-              border-radius: 3px;
-              margin-bottom: 1rem;
-              padding: 0.5rem 0.5rem;
-              input:focus {
-                outline: none;
-              }
-              label {
-                color: var(--cyan);
-                font-family: RobotoMono;
-                font-weight: 300;
-                padding: 0.75rem 0.25rem;
-                input {
-                  padding: 0.5rem;
-                  width: 100%;
-                  background: none;
-                  border: none;
-                  color: var(--font);
-                }
+
+          .form__inputs {
+            background: #0d1418;
+            border-radius: 3px;
+            margin-bottom: 1rem;
+            padding: 0.5rem 0.5rem;
+            input:focus {
+              outline: none;
+            }
+            label {
+              color: var(--cyan);
+              font-family: RobotoMono;
+              font-weight: 300;
+              padding: 0.75rem 0.25rem;
+              input {
+                padding: 0.5rem;
+                width: 100%;
+                background: none;
+                border: none;
+                color: var(--font);
               }
             }
-            .form__textarea {
-              background: #0d1418;
-              border-radius: 3px;
-              margin-bottom: 1rem;
-              padding: 0.5rem 0.5rem;
-              input:focus,
-              textarea:focus {
-                outline: none;
-              }
-              label {
-                color: var(--cyan);
-                font-family: RobotoMono;
-                font-weight: 300;
-                padding: 0.75rem 0.25rem;
-                textarea {
-                  padding: 0.5rem;
-                  width: 100%;
-                  background: none;
-                  border: none;
-                  color: var(--font);
-                  resize: none;
-                  height: 7rem;
-                }
+          }
+          .form__textarea {
+            background: #0d1418;
+            border-radius: 3px;
+            margin-bottom: 1rem;
+            padding: 0.5rem 0.5rem;
+            input:focus,
+            textarea:focus {
+              outline: none;
+            }
+            label {
+              color: var(--cyan);
+              font-family: RobotoMono;
+              font-weight: 300;
+              padding: 0.75rem 0.25rem;
+              textarea {
+                padding: 0.5rem;
+                width: 100%;
+                background: none;
+                border: none;
+                color: var(--font);
+                resize: none;
+                height: 7rem;
               }
             }
           }
@@ -139,38 +135,42 @@ const contact = () => (
       <div className="contact__wrapper__grid">
         <form
           name="contact"
-          method="POST"
+          method="post"
           data-netlify="true"
           netlify-honeypot="bot-field"
           action="/thank-you"
         >
-          <fieldset>
-            <div className="form__inputs">
-              <label htmlFor="name">
-                What's your name{' '}
-                <input
-                  placeholder="ezekiel?"
-                  type="text"
-                  required
-                  id="name"
-                  name="name"
-                />
-              </label>
-            </div>
-            <div className="form__inputs">
-              <label htmlFor="email">
-                Whats ur email <input type="email" required name="email" />
-              </label>
-            </div>
-            <div className="form__textarea">
-              <label htmlFor="message">
-                Message <textarea required name="message" />
-              </label>
-            </div>
-            <div className="form__btn">
-              <button type="submit">Submit</button>
-            </div>
-          </fieldset>
+          <input type="hidden" name="form-name" value="Contact" />
+          <p className="hidden" style={{ display: 'none' }}>
+            <label>
+              Don’t fill this out if you're human: <input name="bot-field" />
+            </label>
+          </p>
+          <div className="form__inputs">
+            <label htmlFor="name">
+              What's your name
+              <input
+                placeholder="ezekiel?"
+                type="text"
+                required
+                id="name"
+                name="name"
+              />
+            </label>
+          </div>
+          <div className="form__inputs">
+            <label htmlFor="email">
+              Whats ur email <input type="email" required name="email" />
+            </label>
+          </div>
+          <div className="form__textarea">
+            <label htmlFor="message">
+              Message <textarea required name="message" />
+            </label>
+          </div>
+          <div className="form__btn">
+            <button type="submit">Submit</button>
+          </div>
         </form>
         <div className="contact__wrapper__grid__email">
           <h2>Send me an email</h2>

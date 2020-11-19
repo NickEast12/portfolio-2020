@@ -39,13 +39,25 @@ const Footer = () => (
     <div>
       <p>Designed and build by Nick East</p>
       <div className="footer__icons">
-        <a href="http://" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://github.com/NickEast12"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <Github />
         </a>
-        <a href="http://" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://www.linkedin.com/in/nick-east"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <LinkedIn />
         </a>
-        <a href="http://" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://open.spotify.com/user/nickeast12?si=GeSIN_6YSeKYSKAFsmj-8A"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <Spotify />
         </a>
       </div>
