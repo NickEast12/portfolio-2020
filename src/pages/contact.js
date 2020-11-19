@@ -7,7 +7,7 @@ const ContactStyles = styled.div`
     .contact__wrapper {
       width: 85%;
       margin: 1.5rem auto;
-      p {
+      > p {
         font-family: RobotoMono;
         margin: 1rem 0 1.5rem 0;
         color: var(--font);
@@ -24,18 +24,18 @@ const ContactStyles = styled.div`
             input:focus {
               outline: none;
             }
-            label {
+            p {
               color: var(--cyan);
               font-family: RobotoMono;
               font-weight: 300;
-              padding: 0.75rem 0.25rem;
-              input {
-                padding: 0.5rem;
-                width: 100%;
-                background: none;
-                border: none;
-                color: var(--font);
-              }
+              padding-left: 5px;
+            }
+            input {
+              padding: 0.5rem;
+              width: 100%;
+              background: none;
+              border: none;
+              color: var(--font);
             }
           }
           .form__textarea {
@@ -47,20 +47,20 @@ const ContactStyles = styled.div`
             textarea:focus {
               outline: none;
             }
-            label {
+            p {
               color: var(--cyan);
               font-family: RobotoMono;
               font-weight: 300;
-              padding: 0.75rem 0.25rem;
-              textarea {
-                padding: 0.5rem;
-                width: 100%;
-                background: none;
-                border: none;
-                color: var(--font);
-                resize: none;
-                height: 7rem;
-              }
+              padding-left: 5px;
+            }
+            textarea {
+              padding: 0.5rem;
+              width: 100%;
+              background: none;
+              border: none;
+              color: var(--font);
+              resize: none;
+              height: 7rem;
             }
           }
         }
@@ -134,10 +134,10 @@ const contact = () => (
       </p>
       <div className="contact__wrapper__grid">
         <form
-          name="contact"
+          name="Contact"
           method="post"
           data-netlify="true"
-          netlify-honeypot="bot-field"
+          data-netlify-honeypot="bot-field"
           action="/thank-you"
         >
           <input type="hidden" name="form-name" value="Contact" />
@@ -147,26 +147,22 @@ const contact = () => (
             </label>
           </p>
           <div className="form__inputs">
-            <label htmlFor="name">
-              What's your name
-              <input
-                placeholder="ezekiel?"
-                type="text"
-                required
-                id="name"
-                name="name"
-              />
-            </label>
+            <p>What's your name</p>
+            <input
+              placeholder="ezekiel?"
+              type="text"
+              required
+              id="name"
+              name="name"
+            />
           </div>
           <div className="form__inputs">
-            <label htmlFor="email">
-              Whats ur email <input type="email" required name="email" />
-            </label>
+            <p>Whats ur email</p>
+            <input type="email" name="email" required />
           </div>
           <div className="form__textarea">
-            <label htmlFor="message">
-              Message <textarea required name="message" />
-            </label>
+            <p>Message</p>
+            <textarea name="message" required />
           </div>
           <div className="form__btn">
             <button type="submit">Submit</button>
