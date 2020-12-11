@@ -93,10 +93,11 @@ const MobileMenuStyles = styled.div`
     backdrop-filter: saturate(180%) blur(5px);
     max-height: ${({ open }) => (open ? '1000rem' : '0')};
     position: absolute;
-    top: 4.3rem;
+    top: 0;
     right: 0;
     width: 100%;
     z-index: -10;
+    padding-top: 5rem;
     height: ${({ open }) => (open ? '100vh' : '0')};
     div {
       display: ${({ open }) => (open ? 'block' : 'none')};
