@@ -95,7 +95,7 @@ const ProjectStyles = styled.div`
           text-transform: uppercase;
           font-size: 0.8rem;
           background: var(--cyan);
-
+          margin: 2px 1px;
           font-weight: 500;
         }
       }
