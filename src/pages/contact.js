@@ -110,8 +110,10 @@ const ContactStyles = styled.div`
     }
   }
   @media only screen and (min-width: 1024px) {
+    width: 100%;
     .contact__wrapper {
       width: 60%;
+      max-width: 1000px;
       padding-bottom: 0rem;
       h1 {
         font-size: 2.5rem;

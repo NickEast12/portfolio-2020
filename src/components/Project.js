@@ -201,6 +201,7 @@ const ProjectStyles = styled.div`
   }
   @media only screen and (min-width: 1280px) {
     .projects__text__align {
+      width: 30%;
       &:nth-child(odd) {
         .project__img {
           padding: 2rem 0 2rem 2rem;
@@ -274,7 +275,9 @@ const ProjectStyles = styled.div`
     margin: 0;
     width: 100%;
     .projects__text__align {
-      width: 100%;
+      width: 90% !important;
+      max-width: 800px;
+      margin: 0 auto;
       &:nth-child(odd) {
         .project__content {
           width: 100%;

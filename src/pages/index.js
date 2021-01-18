@@ -478,7 +478,7 @@ const HomepageContactStyles = styled.section`
     margin: 4rem auto 6rem auto;
   }
   @media only screen and (min-width: 1280px) {
-    max-width: 1000px;
+    max-width: 700px;
     h2 {
       font-size: 1.65rem;
     }

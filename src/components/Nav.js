@@ -310,7 +310,7 @@ const DesktopNavStyles = styled.div`
     .desktop__nav__wrapper {
       width: 80%;
       padding-top: 1.2rem;
-
+      max-width: 1300px;
       &__logo {
         svg {
           width: 60px;
