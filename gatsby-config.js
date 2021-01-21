@@ -8,7 +8,7 @@ module.exports = {
     siteUrl: `https://wwww.nick-east.com`,
     description: `I'm a front-end web developer based in London, UK. With a love for designing and writing code.`,
     twitter: `@comebacktothis`,
-    image: `/icon.png`,
+    image: `/favicon.png`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
